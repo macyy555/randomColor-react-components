@@ -1,6 +1,6 @@
 let reasonReactBlue = "#48a9dc";
 let peach = "#FFE5B4";
-let indianRed = "CD5C5C";
+let indianRed = "#CD5C5C";
 
 // The {j|...|j} feature is just string interpolation, from
 // bucklescript.github.io/docs/en/interop-cheatsheet#string-unicode-interpolation
@@ -44,6 +44,7 @@ let style = {j|
     border-radius: 12px;
     width: 100px;
     height: 100px;
+    background-color: $peach;
   }
   hr{
     color: black;

@@ -2,14 +2,10 @@
 
 var React = require("react");
 var ReactDom = require("react-dom");
+var Name$MyReactApp = require("./Name.bs.js");
+var LineBreak$MyReactApp = require("./LineBreak.bs.js");
 var ExampleStyles$MyReactApp = require("./ExampleStyles.bs.js");
 var RandomColorDocs$MyReactApp = require("./RandomColorDocs.bs.js");
-
-var header = document.createElement("h1");
-
-document.body.appendChild(header);
-
-header.innerHTML = "Name: Maythaporn";
 
 var style = document.createElement("style");
 
@@ -17,16 +13,21 @@ document.head.appendChild(style);
 
 style.innerHTML = ExampleStyles$MyReactApp.style;
 
-function makeContainer(param) {
-  var container = document.createElement("div");
+function makeContainer(format) {
+  var container = document.createElement(format);
   container.className = "container";
   document.body.appendChild(container);
   return container;
 }
 
-ReactDom.render(React.createElement(RandomColorDocs$MyReactApp.make, {}), makeContainer(undefined));
+ReactDom.render(React.createElement(Name$MyReactApp.make, {
+          name: "Maythaporn"
+        }), makeContainer("div"));
 
-exports.header = header;
+ReactDom.render(React.createElement(LineBreak$MyReactApp.make, {}), makeContainer("div"));
+
+ReactDom.render(React.createElement(RandomColorDocs$MyReactApp.make, {}), makeContainer("div"));
+
 exports.style = style;
 exports.makeContainer = makeContainer;
-/* header Not a pure module */
+/* style Not a pure module */
